@@ -1,0 +1,69 @@
+@import "tailwindcss";
+
+@layer base {
+ @font-face {
+  font-family: sooki;
+  src: url(../Fonts/RobotoSlab-Regular.ttf);
+ }
+
+ body{
+  font-family: sooki;
+ }
+}
+
+@layer components {
+ .RedBtn {
+  @apply font-bold uppercase px-[10%] py-6 w-fit h-[50px] rounded-[50px] bg-red-700 text-white flex items-center justify-center hover:bg-blue-950 hover:border hover:border-white duration-500 hover:-translate-y-[5px];
+ }
+
+}
+
+@layer utilities {
+ .row {
+  @apply w-full flex flex-wrap;
+ }
+
+ .UnderLineMenu {
+  @apply opacity-0 duration-300 absolute -bottom-[10px] left-0 flex w-full h-[5px] -skew-x-[25deg] justify-between before:content-[''] before:flex before:w-[70%] before:h-full before:bg-white after:content-[''] after:flex after:w-[20%] after:h-full after:bg-red-700;
+ }
+
+}
+
+@theme {
+ --animate-jump: jump 1s linear alternate infinite;
+
+ @keyframes jump {
+  to {
+   transform: translateY(20px);
+  }
+ }
+}
+
+
+ @keyframes FooterPhoto {
+  0% {
+   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+
+  25% {
+   border-radius: 43% 57% 70% 30% / 82% 74% 26% 18%;
+  }
+
+  55% {
+   border-radius: 82% 18% 70% 30% / 30% 86% 14% 70%;
+  }
+
+  90% {
+   24% 76% 70% 30% / 75% 86% 14% 25%
+  }
+
+  100% {
+   border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+  }
+ }
+
+footer{
+ >div{
+  animation: FooterPhoto 5s linear infinite;
+ }
+}
